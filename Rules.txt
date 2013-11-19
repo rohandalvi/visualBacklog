@@ -1,0 +1,6 @@
+Rules for Import script;
+
+1. There has to be atleast one <li> in the description part for the script to add the description in the csv file.
+2. If parent needs to be added,it should be of the form 'ParentID: <followed by the name/formattedID of parent>'
+3. Name of user story goes into the name of branch ( while creating in alfapad ).
+ 

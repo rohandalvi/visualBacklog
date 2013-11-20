@@ -12,6 +12,12 @@
   require 'csv'
   require 'logger'
   
+  if(ARGV.length!=1)
+    puts "Usage: #{__FILE__} file_name"
+    puts "where file_name is the name of html file. Also, please add double quotes if file_name contains spaces"
+    exit
+  end
+
   puts "Processing"
   
   $count = 0
@@ -42,7 +48,7 @@
   log.debug "Log file created"
 
   
-  file_name = "FastFailover1.html"
+  file_name = ARGV[0].strip #"FastFailover1.html"
   text = File.read(file_name)
   output = text.gsub(/<meta .*>/,"")
 

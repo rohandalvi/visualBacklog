@@ -7,8 +7,8 @@ headers.version = "1.0"
 
 #or one line custom header
 
-workspace = ""
-project = ""
+workspace = "" #enter workspace name here
+project = "" #enter project name here
 
 config = {:base_url => "https://rally1.rallydev.com/slm"}
 config[:workspace]  = "#{workspace}"

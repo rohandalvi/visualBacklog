@@ -4,3 +4,10 @@ Rules for Import script;
 2. If parent needs to be added,it should be of the form 'ParentID: <followed by the name/formattedID of parent>'
 3. Name of user story goes into the name of branch ( while creating in alfapad ).
  
+ 
+ If referencing a pre-existing story in Rally:
+ 
+ A. If the story is to be modified, then provide the FormattedID of the story only ( Do not add the name of the story to it).
+ 
+ B. If a new story needs to be created with a pre-existing parent story, then mention only the FormattedID of the parent story in the "ParentID" field.
+ 

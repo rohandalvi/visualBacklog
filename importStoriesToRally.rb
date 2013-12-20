@@ -8,6 +8,9 @@
     
 =end 
  
+=begin
+  Purpose: Alfapad HTML export to CSV.
+=end
   require 'nokogiri'
   require 'csv'
   require 'logger'

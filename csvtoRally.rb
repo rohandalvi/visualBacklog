@@ -10,6 +10,7 @@ of the 2 step process to import parent-child user stories.
 	
 =end
 
+#Purpose: CSV to Rally
 #require 'rally_api_emc_sso'
 require './connect.rb'
 require 'csv'

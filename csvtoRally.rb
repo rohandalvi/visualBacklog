@@ -42,11 +42,8 @@ def story_exists_in_rally(story_id)
 		return false
 	else
 		puts "StoryID: #{story_id}"
-		if parent_id_exists(story_id)
-			return true
-		else
-			return false
-		end
+		return parent_id_exists(story_id)
+			
 	end
 
 end
@@ -54,13 +51,7 @@ end
 def not_exists(storyName)
 	puts "Story: #{storyName}"
 	result = build_query("hierarchicalrequirement","Name,FormattedID,Project","(Name = \"#{storyName}\")")
-	if(result.results.count!=0)
-		puts "Proj: #{result.results.count}"
-		return false
-	else
-
-		return true
-	end
+	return result.results.count!=0 
 end
 
 def link_parents(row)
@@ -91,11 +82,7 @@ end
 def parent_name_exists(parentName)
 	result = build_query("hierarchicalrequirement","Name,FormattedID","(Name = \"#{parentName}\")")
 	
-	if(result.length > 0)
-		return true
-	else
-		return false
-	end
+	return result.length > 0
 end
 
 def get_parent_from_name(parentName)
@@ -118,21 +105,13 @@ end
 
 def it_is_parent_ID(looksLikeID)
 	looksLikeID = looksLikeID.to_s
-	if( (! looksLikeID.nil?) && (looksLikeID[0..1].eql?("US") ) && (looksLikeID[2..5]=~ /^[-+]?[0-9]+$/) )
-		return true
-	else
-		return false
-	end
+	return ((! looksLikeID.nil?) && (looksLikeID[0..1].eql?("US") ) && (looksLikeID[2..5]=~ /^[-+]?[0-9]+$/) )
 end
 
 def parent_id_exists(parentID)
 	result = build_query("hierarchicalrequirement","Name,FormattedID","(FormattedID = \"#{parentID}\")")
 	
-	if(result.length > 0)
-		return true
-	else
-		return false
-	end
+	return result.length > 0
 
 end
 
